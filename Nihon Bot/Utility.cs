@@ -21,5 +21,25 @@ namespace NihonBot
         { 
             return Emote.Parse($"<a:{EmoteName}:{EmoteID}>"); 
         }
+        
+        public enum EmoteType
+        {
+            Emote,
+            AnimatedEmote
+        }
+        
+        public static Emote RetrieveEmote(EmoteType Type, string EmoteName, string EmoteID)
+        {
+            switch (Type)
+            {                         
+                case EmoteType.Emote:
+                    return Emote.Parse($"<:{EmoteName}:{EmoteID}>");
+                case EmoteType.AnimatedEmote:
+                    return Emote.Parse($"<a:{EmoteName}:{EmoteID}>");
+                default: 
+                    throw new Exception("Type Not Available Or Found");
+                    break;
+            } 
+        }   
     }
 }
