@@ -12,15 +12,10 @@ namespace NihonBot
         public static ulong OwnerID = 875397959834017822; /* Owner Discord ID */
         public static ulong Server = 881976771707301888; /* Server ID */
 
-        public static Emote GetEmote(string EmoteName, string EmoteID) /* Pass EmoteName And ID Gather By \:EmoteName: In Discord Client */
-        { 
-            return Emote.Parse($"<:{EmoteName}:{EmoteID}>"); /* Parse And Return Emote "GetAnimatedEmote" Works Same Just Returns Animated Emote */
-        }
+        /* Pass EmoteName And ID Gather By \:EmoteName: In Discord Client */
+        public static Emote GetEmote(string EmoteName, string EmoteID) => Emote.Parse($"<:{EmoteName}:{EmoteID}>"); /* Parse And Return Emote "GetAnimatedEmote" Works Same Just Returns Animated Emote */
 
-        public static Emote GetAnimatedEmote(string EmoteName, string EmoteID) 
-        { 
-            return Emote.Parse($"<a:{EmoteName}:{EmoteID}>"); 
-        }
+        public static Emote GetAnimatedEmote(string EmoteName, string EmoteID) => Emote.Parse($"<a:{EmoteName}:{EmoteID}>"); 
         
         public enum EmoteType
         {
